@@ -36,6 +36,11 @@ body {
 
 h1 {
     padding-bottom: 10px;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 18px;
 }
 
 .container {
@@ -48,35 +53,72 @@ h1 {
 header {
     grid-area: header;
     display: grid;
-    grid-template: 
-        "search person"
-        "greeting buttons";
-    gap: 25px;
+    grid-template: 1fr 2fr / 2fr 1fr;
+    align-items: end;
+    gap: 15px;
     background-color: whitesmoke;
     padding: 20px 50px;
-    justify-content: space-between;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-.search {
-    grid-area: search;
+.search-image{
+    width: 25px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
-#search {
+.search-input {
     background-color: #e8e4f0;
     border: none;
     border-radius: 20px;
+    width: 85%;
+    padding: 5px;
+}
+
+.search-input:focus {
+    outline: 2px solid #4d4363;
 }
 
 .person {
-    grid-area: person;
+    justify-self: end;
+    padding-right: 35px;
 }
 
-.greeting {
-    grid-area: greeting;
+.person-notifications {
+    width: 25px;
+    vertical-align: middle;
+}
+
+.person-avatar {
+    width: 50px;
+    vertical-align: middle;
+    margin: 0px 35px -5px;
+}
+
+.person-name {
+    vertical-align: middle;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.greeting-avatar {
+    width: 70px;
+    vertical-align: bottom;
+}
+
+.greeting-text {
+    display: inline-block;
+    margin-left: 15px;
+    font-weight: 600;
+}
+
+.greeting-name {
+    font-size: 24px;
 }
 
 .buttons {
-    grid-area: buttons;
+    justify-self: end;
 }
 
 .buttons > button {
@@ -91,6 +133,7 @@ header {
 .sidebar {
     grid-area: sidebar;
     background-color: #4d4363;
+    min-width: 300px;
 }
 
 .sidebar-all {
@@ -100,15 +143,16 @@ header {
     color: whitesmoke;
     padding: 20px;
     height: fit-content;
+    position: fixed;
 }
 
 .sidebar-all > .sidebar-dashboard {
     width: 64px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .sidebar-all > .sidebar-communities {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .sidebar-all > img {
@@ -116,8 +160,15 @@ header {
     justify-self: center;
 }
 
+.sidebar-all > .sidebar-title {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
 .sidebar-all > .sidebar-text {
-    vertical-align: bottom;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    font-size: 20px;
 }
 
 main {
@@ -138,7 +189,7 @@ main {
 .project-items {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-    gap: 25px;
+    gap: 30px 25px;
 }
 
 .project {
@@ -150,6 +201,7 @@ main {
     border-radius: 10px;
     padding: 25px 25px 0px;
     background: linear-gradient(to right, #58bf5f 10px, whitesmoke 10px);
+    box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .project-text {
@@ -177,12 +229,19 @@ main {
     grid-template-rows: repeat(3, 1fr);
     background-color: whitesmoke;
     border-radius: 10px;
-    padding: 25px;
+    padding: 30px;
+    box-shadow: 3px 1px 9px rgba(0, 0, 0, 0.5);
 }
 
 .announcement-1,
 .announcement-2 {
     border-bottom: 1px solid darkgray;
+    margin-bottom: 10px;
+}
+
+.announcement > p {
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .trending {
@@ -195,5 +254,10 @@ main {
     background-color: whitesmoke;
     border: 1px solid whitesmoke;
     border-radius: 10px;
-    padding: 25px;
+    padding: 30px;
+    box-shadow: 3px 1px 9px rgba(0, 0, 0, 0.5);
+}
+
+.trending-avatar {
+    width: 50px;
 }
